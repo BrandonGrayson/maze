@@ -72,18 +72,27 @@ const stepThroughCell = (row, column) => {
 
     // For each neighbor...
     for(let neighbor of neighbors) {
-        const [nextRow, nextColumn, direction] = neighbor;
-    // See if neighbor is out of bounds
-        if(nextRow < 0 || nextRow >= cells || nextColumn < 0 || nextColumn >= cells) {
-            continue;
+            const [nextRow, nextColumn, direction] = neighbor;
+        // See if neighbor is out of bounds
+            if(nextRow < 0 || nextRow >= cells || nextColumn < 0 || nextColumn >= cells) {
+                continue;
+            }
+        // If we have visited that neighbor, then visit next neighbor
+            if(grid[nextRow] [nextColumn]) {
+                continue;
+            }
+        // Remove a wall from either horizontals or verticals
+        if(direction === 'left' ) {
+            verticals[row] [column -1] = true;
+        } else if (direction === 'right') {
+            verticals[row] [column] = true;
+        } else if(direction === 'up') {
+            horizontals[row - 1] [column] = 'true';
+        } else if(direction === 'down') {
+            horizontals[row] [column] = true;
         }
-    // If we have visited that neighbor, then visit next neighbor
-        if(grid[nextRow] [nextColumn]) {
-            continue;
-        }
-    // Remove a wall from either horizontals or verticals
     }
     // Visit that next cell
 };
 
-stepThroughCell(1, 1);
+stepThroughCell(startRow, startColumn);
