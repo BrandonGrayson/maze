@@ -98,3 +98,15 @@ const stepThroughCell = (row, column) => {
 };
 
 stepThroughCell(startRow, startColumn);
+
+// Iterate through horizonatals array
+horizontals.forEach((row) => {
+    // Determine if open argument = true
+    row.forEach((open) => {
+        if (open) {
+            return;
+        }
+
+        const wall = Bodies.rectangle();
+    });
+});
