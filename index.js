@@ -165,6 +165,8 @@ const ball = Bodies.circle(
 
 World.add(world, ball);
 
+// Keypresses
+
 document.addEventListener('keydown', event => {
     if (event.keyCode === 87) {
         console.log('Move Ball Up');
