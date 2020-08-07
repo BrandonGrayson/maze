@@ -1,4 +1,4 @@
-const {Engine, Render, Runner, World, Bodies, } = Matter;
+const {Engine, Render, Runner, World, Bodies, Body} = Matter;
 
 const cells = 3;
 const width = 600;
@@ -164,3 +164,21 @@ const ball = Bodies.circle(
 );
 
 World.add(world, ball);
+
+document.addEventListener('keydown', event => {
+    if (event.keyCode === 87) {
+        console.log('Move Ball Up');
+    }
+
+    if (event.keyCode === 68) {
+        console.log('Move Ball right');
+    }
+
+    if (event.keyCode === 83) {
+        console.log('Move Ball down');
+    }
+
+    if (event.keyCode === 65) {
+        console.log('Move Ball left');
+    }
+});
