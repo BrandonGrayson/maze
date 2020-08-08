@@ -132,7 +132,7 @@ verticals.forEach((row, rowIndex) => {
         // Determine if open argument is true and where to place walls
         const wall = Bodies.rectangle(
             columnIndex * unitLength + unitLength,
-            rowIndex * unitLength + unitLength,
+            rowIndex * unitLength + unitLength / 2,
             5,
             unitLength,
             {
@@ -191,8 +191,8 @@ document.addEventListener('keydown', event => {
     }
 });
 
-// Win Condition
 
+// Win Condition
 Events.on(engine, 'collisionStart', event => {
     event.pairs.forEach((collision) => {
         const labels = ['ball', 'goal'];
